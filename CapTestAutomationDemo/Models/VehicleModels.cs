@@ -16,6 +16,8 @@ namespace CapTestAutomationDemo.Models
         public string Make { get; set; }
         public string CarModel { get; set; }
         public string BodyStyle { get; set; }
-        public string InsurancePackage { get; set; }
+        public string FuelType { get; set; }
+        public float EngineSize { get; set; }
+        public int InsurancePackage { get; set; }
     }
 }
