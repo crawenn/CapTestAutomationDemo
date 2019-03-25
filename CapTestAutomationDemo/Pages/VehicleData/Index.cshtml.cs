@@ -19,10 +19,9 @@ namespace CapTestAutomationDemo.Pages.VehicleData
             _context = context;
         }
 
-        public IList<VehiclesModel> VehiclesModel { get;set; }
-
+        public IList<VehiclesModel> VehiclesModel { get; set; }
         [BindProperty(SupportsGet = true)]
-        public string SearchString { get; set; }        
+        public string SearchString { get; set; }
         public SelectList CarMake { get; set; }
         [BindProperty(SupportsGet = true)]
         public string Make { get; set; }
@@ -36,7 +35,8 @@ namespace CapTestAutomationDemo.Pages.VehicleData
                 cars = cars.Where(s => s.Make.Contains(SearchString));
             }
 
-            VehiclesModel = await _context.VehiclesModel.ToListAsync();
+            VehiclesModel = await cars.ToListAsync();
+            //VehiclesModel = await _context.VehiclesModel.ToListAsync();
         }
     }
 }

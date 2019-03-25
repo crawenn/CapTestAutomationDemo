@@ -21,7 +21,7 @@ namespace CapTestAutomationDemo.Models
         public string FuelType { get; set; }
         [Display(Name = "Engine Size")]
         public double EngineSize { get; set; }
-        [Display(Name = "Current insurance package")]
+        [Display(Name = "Insurance package")]
         public int InsurancePackage { get; set; }
     }
 }
