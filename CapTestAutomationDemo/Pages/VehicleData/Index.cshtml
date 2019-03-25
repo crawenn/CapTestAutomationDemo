@@ -1,0 +1,60 @@
+﻿@page
+@model CapTestAutomationDemo.Pages.VehicleData.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VehiclesModel[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehiclesModel[0].Make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehiclesModel[0].CarModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehiclesModel[0].BodyStyle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehiclesModel[0].InsurancePackage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.VehiclesModel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodyStyle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsurancePackage)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

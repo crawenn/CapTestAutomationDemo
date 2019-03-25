@@ -1,0 +1,49 @@
+﻿@page
+@model CapTestAutomationDemo.Pages.VehicleData.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VehiclesModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VehiclesModel.Year)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehiclesModel.Year)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehiclesModel.Make)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehiclesModel.Make)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehiclesModel.CarModel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehiclesModel.CarModel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehiclesModel.BodyStyle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehiclesModel.BodyStyle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehiclesModel.InsurancePackage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehiclesModel.InsurancePackage)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.VehiclesModel.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

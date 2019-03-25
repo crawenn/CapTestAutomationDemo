@@ -1,0 +1,52 @@
+﻿@page
+@model CapTestAutomationDemo.Pages.VehicleData.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>VehiclesModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VehiclesModel.Year)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehiclesModel.Year)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehiclesModel.Make)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehiclesModel.Make)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehiclesModel.CarModel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehiclesModel.CarModel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehiclesModel.BodyStyle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehiclesModel.BodyStyle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehiclesModel.InsurancePackage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehiclesModel.InsurancePackage)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="VehiclesModel.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

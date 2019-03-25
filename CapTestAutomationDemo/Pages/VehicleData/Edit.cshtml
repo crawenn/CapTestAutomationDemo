@@ -1,0 +1,55 @@
+﻿@page
+@model CapTestAutomationDemo.Pages.VehicleData.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>VehiclesModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="VehiclesModel.ID" />
+            <div class="form-group">
+                <label asp-for="VehiclesModel.Year" class="control-label"></label>
+                <input asp-for="VehiclesModel.Year" class="form-control" />
+                <span asp-validation-for="VehiclesModel.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehiclesModel.Make" class="control-label"></label>
+                <input asp-for="VehiclesModel.Make" class="form-control" />
+                <span asp-validation-for="VehiclesModel.Make" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehiclesModel.CarModel" class="control-label"></label>
+                <input asp-for="VehiclesModel.CarModel" class="form-control" />
+                <span asp-validation-for="VehiclesModel.CarModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehiclesModel.BodyStyle" class="control-label"></label>
+                <input asp-for="VehiclesModel.BodyStyle" class="form-control" />
+                <span asp-validation-for="VehiclesModel.BodyStyle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehiclesModel.InsurancePackage" class="control-label"></label>
+                <input asp-for="VehiclesModel.InsurancePackage" class="form-control" />
+                <span asp-validation-for="VehiclesModel.InsurancePackage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
