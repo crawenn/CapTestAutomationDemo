@@ -26,6 +26,12 @@
                 @Html.DisplayNameFor(model => model.VehiclesModel[0].BodyStyle)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.VehiclesModel[0].FuelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehiclesModel[0].EngineSize)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.VehiclesModel[0].InsurancePackage)
             </th>
             <th></th>
@@ -45,6 +51,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BodyStyle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EngineSize)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.InsurancePackage)

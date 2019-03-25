@@ -10,14 +10,18 @@ namespace CapTestAutomationDemo.Models
     {
         public int ID { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date)]        
         public DateTime Year { get; set; }
-
         public string Make { get; set; }
+        [Display(Name = "Model")]
         public string CarModel { get; set; }
+        [Display(Name = "Body style")]
         public string BodyStyle { get; set; }
+        [Display(Name = "Fuel type")]
         public string FuelType { get; set; }
-        public float EngineSize { get; set; }
+        [Display(Name = "Engine Size")]
+        public double EngineSize { get; set; }
+        [Display(Name = "Current insurance package")]
         public int InsurancePackage { get; set; }
     }
 }
