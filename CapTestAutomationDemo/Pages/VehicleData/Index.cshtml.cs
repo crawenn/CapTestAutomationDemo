@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -17,7 +18,7 @@ namespace CapTestAutomationDemo.Pages.VehicleData
         public IndexModel(CapTestAutomationDemo.Models.CapTestAutomationDemoContext context)
         {
             _context = context;
-        }
+        }        
 
         public IList<VehiclesModel> VehiclesModel { get; set; }
         [BindProperty(SupportsGet = true)]
@@ -29,6 +30,10 @@ namespace CapTestAutomationDemo.Pages.VehicleData
       
         public async Task OnGetAsync()
         {
+            var culture = new CultureInfo("en-GB");
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+
             IQueryable<string> ageQuery = from m in _context.VehiclesModel
                                           orderby m.Year.ToString()
                                           select m.Year.ToString();
@@ -47,7 +52,7 @@ namespace CapTestAutomationDemo.Pages.VehicleData
 
             Year = new SelectList(await ageQuery.Distinct().ToListAsync());
             VehiclesModel = await cars.ToListAsync();
-            //VehiclesModel = await _context.VehiclesModel.ToListAsync();
+            //VehiclesModel = await _context.VehiclesModel.ToListAsync();            
         }
     }
 }
