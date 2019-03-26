@@ -9,4 +9,3 @@
     [InsurancePackage] INT NULL,	 
     CONSTRAINT [PK_VehiclesModel] PRIMARY KEY CLUSTERED ([ID] ASC)
 );
-

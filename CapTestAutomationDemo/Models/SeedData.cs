@@ -27,7 +27,7 @@ namespace CapTestAutomationDemo.Models
                         CarModel = "Jazz",
                         BodyStyle = "Hatchback",
                         FuelType = "petrol",
-                        EngineSize = 1.5f,
+                        EngineSize = 1.5d,
                         InsurancePackage = 3
                     },
 
@@ -38,7 +38,7 @@ namespace CapTestAutomationDemo.Models
                         CarModel = "A6",
                         BodyStyle = "Sedan",
                         FuelType = "diesel",
-                        EngineSize = 2.0f,
+                        EngineSize = 2.0d,
                         InsurancePackage = 3
                     },
 
@@ -49,7 +49,7 @@ namespace CapTestAutomationDemo.Models
                         CarModel = "SX4",
                         BodyStyle = "Hatchback",
                         FuelType = "diesel",
-                        EngineSize = 1.6f,
+                        EngineSize = 1.6d,
                         InsurancePackage = 2
                     });
                 context.SaveChanges();
