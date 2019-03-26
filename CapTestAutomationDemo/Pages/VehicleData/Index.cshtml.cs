@@ -22,12 +22,17 @@ namespace CapTestAutomationDemo.Pages.VehicleData
         public IList<VehiclesModel> VehiclesModel { get; set; }
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
-        public SelectList CarMake { get; set; }
+
+        public SelectList Year { get; set; }
         [BindProperty(SupportsGet = true)]
-        public string Make { get; set; }
+        public string CarYear { get; set; }
       
         public async Task OnGetAsync()
         {
+            IQueryable<string> ageQuery = from m in _context.VehiclesModel
+                                          orderby m.Year.ToString()
+                                          select m.Year.ToString();
+
             var cars = from m in _context.VehiclesModel
                        select m;
             if (!string.IsNullOrEmpty(SearchString))
@@ -35,6 +40,12 @@ namespace CapTestAutomationDemo.Pages.VehicleData
                 cars = cars.Where(s => s.Make.Contains(SearchString));
             }
 
+            if (!string.IsNullOrEmpty(CarYear))
+            {
+                cars = cars.Where(x => x.Year.ToString() == CarYear);
+            }
+
+            Year = new SelectList(await ageQuery.Distinct().ToListAsync());
             VehiclesModel = await cars.ToListAsync();
             //VehiclesModel = await _context.VehiclesModel.ToListAsync();
         }

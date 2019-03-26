@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{searchString?}"
 @model CapTestAutomationDemo.Pages.VehicleData.IndexModel
 
 @{
@@ -12,7 +12,10 @@
 </p>
 <form>
     <p>
-        Title: <input type="text" asp-for="SearchString" />
+        <select asp-for="CarYear" asp-items="Model.Year">
+            <option value="">All</option>
+        </select>
+        Search: <input type="text" asp-for="SearchString" />
         <input type="submit" value="Filter" />
     </p>
 </form>
