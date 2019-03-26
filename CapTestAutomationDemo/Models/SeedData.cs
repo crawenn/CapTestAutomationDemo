@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,7 +11,7 @@ namespace CapTestAutomationDemo.Models
     public class SeedData
     {
         public static void Initialize(IServiceProvider serviceProvider)
-        {
+        {            
             using (var context = new CapTestAutomationDemoContext(
                 serviceProvider.GetRequiredService<DbContextOptions<CapTestAutomationDemoContext>>()))
             {
@@ -22,7 +23,7 @@ namespace CapTestAutomationDemo.Models
                 context.VehiclesModel.AddRange(
                     new VehiclesModel
                     {
-                        Year = DateTime.Parse("2017-01-01"),
+                        Year = DateTime.Parse("2017"),
                         Make = "Honda",
                         CarModel = "Jazz",
                         BodyStyle = "Hatchback",
@@ -33,7 +34,7 @@ namespace CapTestAutomationDemo.Models
 
                     new VehiclesModel
                     {
-                        Year = DateTime.Parse("2014-01-01"),
+                        Year = DateTime.Parse("2014"),
                         Make = "Audi",
                         CarModel = "A6",
                         BodyStyle = "Sedan",
@@ -44,7 +45,7 @@ namespace CapTestAutomationDemo.Models
 
                     new VehiclesModel
                     {
-                        Year = DateTime.Parse("2007-01-01"),
+                        Year = DateTime.Parse("2007"),
                         Make = "Suzuki",
                         CarModel = "SX4",
                         BodyStyle = "Hatchback",

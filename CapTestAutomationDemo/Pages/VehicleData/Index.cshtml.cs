@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -24,8 +25,9 @@ namespace CapTestAutomationDemo.Pages.VehicleData
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:yyyy}", ApplyFormatInEditMode = true)]
         public SelectList Year { get; set; }
-        [BindProperty(SupportsGet = true)]
+        [BindProperty(SupportsGet = true), DisplayFormat(DataFormatString = "{0:yyyy}", ApplyFormatInEditMode = true)]
         public string CarYear { get; set; }
       
         public async Task OnGetAsync()
